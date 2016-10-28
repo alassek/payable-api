@@ -12,6 +12,8 @@ module Payable
     end
 
     def self.retrieve(id, client: Payable.client, http: {})
+      raise NotImplementedError if self == Payable::Resource
+
       client.get(url_template.expand(id), http)
     end
 

@@ -3,6 +3,8 @@ require 'addressable/template'
 
 module Payable
   class Resource < Dry::Struct
+    attribute :id, Types::Coercible::Int
+
     def self.api_url
       Addressable::URI.parse Payable.config.api_url
     end
@@ -11,12 +13,10 @@ module Payable
       raise NotImplementedError
     end
 
-    def self.retrieve(id, client: Payable.client, http: {})
-      raise NotImplementedError if self == Payable::Resource
+    def self.retrieve(id, client: Payable.client, params: {})
+      response = client.get(url_template.expand(id: id), params)
 
-      client.get(url_template.expand(id), http)
+      new(response.body)
     end
-
-    attribute :id, Types::Coercible::Int
   end
 end

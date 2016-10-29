@@ -1,8 +1,12 @@
 require 'faraday'
+require 'forwardable'
 require 'addressable/uri'
+require 'payable/middleware'
 
 module Payable
   class Client
+    extend Forwardable
+
     attr_reader :company_id, :api_key
 
     def initialize(company_id: Payable.config.company_id, api_key: Payable.config.api_key)
@@ -14,8 +18,17 @@ module Payable
     end
 
     def connection
-      raise NotImplementedError
+      @connection ||= Faraday.new api_url do |conn|
+        conn.basic_auth company_id, api_key
+        conn.request :json
+        conn.response :json
+        conn.response :logger
+        conn.response :symbolize_keys
+        conn.adapter Faraday.default_adapter
+      end
     end
+
+    def_delegators :connection, :get, :post
 
     private
 

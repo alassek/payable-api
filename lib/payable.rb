@@ -3,7 +3,6 @@ require 'dry/configurable'
 module Payable
   extend Dry::Configurable
 
-  setting :api_version
   setting :api_url, 'https://api.payable.com/v1/'
 
   setting :company_id

@@ -22,7 +22,7 @@ module Payable
         conn.basic_auth company_id, api_key
         conn.request :json
         conn.response :json
-        conn.response :logger
+        conn.response :logger, Payable.config.logger, bodies: true if Payable.config.logger
         conn.response :symbolize_keys
         conn.adapter Faraday.default_adapter
       end

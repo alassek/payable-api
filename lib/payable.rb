@@ -28,5 +28,5 @@ end
 
 require 'payable/types'
 require 'payable/client'
+require 'payable/resource'
 require 'payable/resource_list'
-require 'payable/work_type'

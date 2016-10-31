@@ -34,8 +34,8 @@ module Payable
       end
     end
 
-    def self.list(page_size: Payable.config.page_size)
-      ResourceList.new(self, page_size: page_size)
+    def self.list(options = {})
+      ResourceList.new(self, options)
     end
 
     def url
@@ -43,3 +43,8 @@ module Payable
     end
   end
 end
+
+require 'payable/worker'
+require 'payable/work_type'
+require 'payable/work'
+require 'payable/payment'

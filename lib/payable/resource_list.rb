@@ -2,9 +2,9 @@ module Payable
   class ResourceList
     include Enumerable
 
-    attr_reader :type, :collection, :resource_url, :page_size, :pages
+    attr_reader :type, :collection, :resource_url, :page_size, :pages, :params
 
-    def initialize(type, page_num: 1, page_size: Payable.config.page_size)
+    def initialize(type, options = {})
       @type = case type
       when Symbol, String then Payable.const_get(type)
       else type
@@ -12,8 +12,9 @@ module Payable
 
       @collection   = @type.collection
       @resource_url = Payable.api_url.join(collection)
-      @page_num     = page_num
-      @page_size    = page_size
+      @page_num     = options.fetch(:page_num, 1)
+      @page_size    = options.fetch(:page_size){ Payable.config.page_size }
+      @params       = filter options, :page_num, :page_size
       @pages        = {}
     end
 
@@ -53,11 +54,15 @@ module Payable
     private
 
     def get(page: 1, page_size: @page_size)
-      Payable.client.get(resource_url, page: page, page_size: page_size)
+      Payable.client.get(resource_url, params.merge(page: page, page_size: page_size))
     end
 
     def map(collection)
       Array(collection).map{ |row| type.new(row) }
+    end
+
+    def filter(hash, *exceptions)
+      Hash[Array(hash).reject { |(key, _)| exceptions.include?(key) }]
     end
   end
 end

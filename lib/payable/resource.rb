@@ -10,7 +10,7 @@ module Payable
     end
 
     def self.url_template
-      raise NotImplementedError
+      Addressable::Template.new api_url.join("#{collection}/{id}")
     end
 
     def self.retrieve(id, client: Payable.client, params: {})
@@ -20,6 +20,8 @@ module Payable
     end
 
     def self.collection
+      raise NotImplementedError if self == Payable::Resource
+
       @collection ||= begin
         collection = name.split('::').last
         collection = collection.split(/(?=[A-Z])/).map(&:downcase)

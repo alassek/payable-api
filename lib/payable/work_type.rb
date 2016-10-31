@@ -7,10 +7,6 @@ module Payable
     attribute :created_at, Types::Form::DateTime
     attribute :updated_at, Types::Form::DateTime
 
-    def self.url_template
-      Addressable::Template.new api_url.join('work_types/{id}')
-    end
-
     def url
       self.class.url_template.expand(id: id)
     end

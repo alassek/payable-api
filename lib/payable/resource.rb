@@ -3,7 +3,9 @@ require 'addressable/template'
 
 module Payable
   class Resource < Dry::Struct
-    attribute :id, Types::Coercible::Int
+    constructor_type :schema
+
+    attribute :id, Types::Strict::Int
     attribute :created_at, Types::Form::DateTime
     attribute :updated_at, Types::Form::DateTime
 

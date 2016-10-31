@@ -1,6 +1,6 @@
 module Payable
   class Payment < Resource
-    attribute :worker_id, Types::Coercible::Int
+    attribute :worker_id, Types::Strict::Int
     attribute :amount, Types::Coercible::Int
     attribute :status, Types::PaymentStatus
     attribute :notes, Types::String

@@ -9,6 +9,10 @@ module Payable
   setting :company_id
   setting :api_key
 
+  def self.api_url
+    Addressable::URI.parse config.api_url
+  end
+
   def self.client
     @client ||= Client.new
   end
@@ -23,4 +27,5 @@ end
 
 require 'payable/types'
 require 'payable/client'
+require 'payable/resource_list'
 require 'payable/work_type'

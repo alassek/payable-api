@@ -18,5 +18,24 @@ module Payable
 
       new(response.body)
     end
+
+    def self.collection
+      @collection ||= begin
+        collection  = name.split('::').last
+        capitalized = /\A([A-Z]{1}[a-z]+)/
+        words       = []
+
+        while (word = collection.match(capitalized))
+          words << word[1].downcase
+          collection.sub!(capitalized, '')
+        end
+
+        "#{ words.join('_') }s"
+      end
+    end
+
+    def self.list(page_size: 50)
+      ResourceList.new(self, page_size: page_size)
+    end
   end
 end

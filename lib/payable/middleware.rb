@@ -18,6 +18,7 @@ module Payable
 
           new_value = case value
           when Hash then symbolize_keys(value)
+          when Array then value.map{|v| symbolize_keys(v) }
           else value
           end
 

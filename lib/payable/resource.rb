@@ -21,16 +21,10 @@ module Payable
 
     def self.collection
       @collection ||= begin
-        collection  = name.split('::').last
-        capitalized = /\A([A-Z]{1}[a-z]+)/
-        words       = []
+        collection = name.split('::').last
+        collection = collection.split(/(?=[A-Z])/).map(&:downcase)
 
-        while (word = collection.match(capitalized))
-          words << word[1].downcase
-          collection.sub!(capitalized, '')
-        end
-
-        "#{ words.join('_') }s"
+        "#{ collection.join('_') }s"
       end
     end
 

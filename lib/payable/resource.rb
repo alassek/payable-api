@@ -4,6 +4,8 @@ require 'addressable/template'
 module Payable
   class Resource < Dry::Struct
     attribute :id, Types::Coercible::Int
+    attribute :created_at, Types::Form::DateTime
+    attribute :updated_at, Types::Form::DateTime
 
     def self.api_url
       Addressable::URI.parse Payable.config.api_url
@@ -32,6 +34,10 @@ module Payable
 
     def self.list(page_size: Payable.config.page_size)
       ResourceList.new(self, page_size: page_size)
+    end
+
+    def url
+      self.class.url_template.expand(id: id)
     end
   end
 end

@@ -4,7 +4,7 @@ module Payable
 
     attr_reader :type, :collection, :resource_url, :page_size, :pages
 
-    def initialize(type, page_num: 1, page_size: 50)
+    def initialize(type, page_num: 1, page_size: Payable.config.page_size)
       @type = case type
       when Symbol, String then Payable.const_get(type)
       else type

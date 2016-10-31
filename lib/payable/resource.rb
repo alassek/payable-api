@@ -30,7 +30,7 @@ module Payable
       end
     end
 
-    def self.list(page_size: 50)
+    def self.list(page_size: Payable.config.page_size)
       ResourceList.new(self, page_size: page_size)
     end
   end

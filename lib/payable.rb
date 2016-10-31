@@ -5,6 +5,7 @@ module Payable
 
   setting :api_url, 'https://api.payable.com/v1/'
   setting :logger
+  setting :page_size, 50
 
   setting :company_id
   setting :api_key

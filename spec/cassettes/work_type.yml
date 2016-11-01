@@ -1,0 +1,334 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types/123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "id":123,
+          "name":"Test WorkType by units",
+          "quantity_measure":"unit",
+          "created_at":"2016-10-28T17:45:11Z",
+          "updated_at":"2016-10-31T20:55:34Z"
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types/234
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "id":234,
+          "name":"Test WorkType by time",
+          "quantity_measure":"time",
+          "created_at":"2016-10-28T17:45:11Z",
+          "updated_at":"2016-10-31T20:55:34Z"
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types/345
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "id":345,
+          "name":"Test WorkType by money",
+          "quantity_measure":"money",
+          "created_at":"2016-10-28T17:45:11Z",
+          "updated_at":"2016-10-31T20:55:34Z"
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types/456
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "id":456,
+          "name":"Test WorkType by distance",
+          "quantity_measure":"distance",
+          "created_at":"2016-10-28T17:45:11Z",
+          "updated_at":"2016-10-31T20:55:34Z"
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types?page=1&page_size=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 1436e73a-4860-4d2d-a9bc-1b30aa33427b
+      date:
+      - Tue, 01 Nov 2016 16:11:47 GMT
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "page":1,
+          "page_count":1,
+          "page_size":50,
+          "total_count":4,
+          "work_types":[
+            {"id":123,"name":"Test WorkType by units","quantity_measure":"unit","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"},
+            {"id":234,"name":"Test WorkType by time","quantity_measure":"time","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"},
+            {"id":345,"name":"Test WorkType by money","quantity_measure":"money","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"},
+            {"id":456,"name":"Test WorkType by distance","quantity_measure":"distance","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"}
+          ]
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types?page=1&page_size=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 1e065dc5-5e8f-49dd-b402-a49ebbaf126b
+      date:
+      - Tue, 01 Nov 2016 16:11:47 GMT
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "page":1,
+          "page_count":2,
+          "page_size":2,
+          "total_count":4,
+          "work_types":[
+            {"id":123,"name":"Test WorkType by units","quantity_measure":"unit","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"},
+            {"id":234,"name":"Test WorkType by time","quantity_measure":"time","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"}
+          ]
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types?page=2&page_size=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 60c60ce8-1b87-4ceb-8612-708ac710c375
+      date:
+      - Tue, 01 Nov 2016 16:11:47 GMT
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "page":2,
+          "page_count":2,
+          "page_size":2,
+          "total_count":4,
+          "work_types":[
+            {"id":345,"name":"Test WorkType by money","quantity_measure":"money","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"},
+            {"id":456,"name":"Test WorkType by distance","quantity_measure":"distance","created_at":"2016-10-28T17:45:11Z","updated_at":"2016-10-31T20:55:34Z"}
+          ]
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/work_types?page=3&page_size=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic MDAwMDAwMDpOb3RBVmFsaWRBUElLZXk=
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      status:
+      - 200 OK
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 0ffe41ac-54a2-4d58-8bb2-c4904cb71bee
+      date:
+      - Tue, 01 Nov 2016 16:11:47 GMT
+      access-control-allow-credentials:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: >
+        {
+          "page":3,
+          "page_count":2,
+          "page_size":2,
+          "total_count":4,
+          "work_types":[]
+        }
+    http_version:
+  recorded_at: Tue, 01 Nov 2016 16:11:49 GMT
+recorded_with: VCR 3.0.3

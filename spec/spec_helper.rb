@@ -1,4 +1,6 @@
 require 'payable'
+require 'vcr'
+require 'pry'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -82,7 +84,17 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 end
 
+# Prevent client from failing due to missing credentials, all http
+# requests will be replayed from VCR
 Payable.configure do |config|
-  config.company_id = 'foo'
-  config.api_key    = 'bar'
+  config.company_id = 0000000
+  config.api_key    = 'NotAValidAPIKey'
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/cassettes"
+  c.hook_into :faraday
+  c.default_cassette_options = { record: :none, match_requests_on: [:method, :path, :query] }
+  c.configure_rspec_metadata!
+  # c.debug_logger = $stderr
 end

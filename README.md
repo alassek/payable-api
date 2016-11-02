@@ -1,5 +1,6 @@
 # Payable
 [![CI Status](https://travis-ci.org/alassek/payable-api.svg?branch=master)](https://travis-ci.org/alassek/payable-api)
+[![Gem Version](https://badge.fury.io/rb/payable-api.svg)](https://badge.fury.io/rb/payable-api)
 
 A simple API client for [Payable.com](https://payable.com).
 

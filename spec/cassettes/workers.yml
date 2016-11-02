@@ -1,0 +1,668 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.payable.com/v1/workers
+    body:
+      encoding: UTF-8
+      string: '{"display_name":"Ricky Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","invite":false}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 201 Created
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-wait-for-onboarding-state-refresh:
+      - job_type=refresh_entity_payee_onboarding_state_job&model_type_id=4&model_id=2913066854
+      x-request-id:
+      - 3b9b9d6b-797e-4e4f-9ddd-971685bd7f8a
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"3728241df6dbc6d37984148c9f6f14f9"'
+      x-runtime:
+      - '0.037039'
+      date:
+      - Wed, 02 Nov 2016 19:32:08 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2913066854,"display_name":"Ricky Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 19:32:08 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers/2913066854
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 48239eff-6325-4aed-8931-97ea751b216f
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"3728241df6dbc6d37984148c9f6f14f9"'
+      x-runtime:
+      - '0.017513'
+      date:
+      - Wed, 02 Nov 2016 20:59:21 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2913066854,"display_name":"Ricky Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:21 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=1&page_size=250
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 231ffcb7-db25-42bc-9410-2b8aabf0cad2
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"25cf4c69c4bde449decf58bdd975590f"'
+      x-runtime:
+      - '0.021852'
+      date:
+      - Wed, 02 Nov 2016 20:59:22 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"page_count":1,"page_size":250,"total_count":3,"workers":[{"id":2913066854,"display_name":"Ricky
+        Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"},{"id":65139642,"display_name":"Cal
+        Naughton Jr.","first_name":null,"last_name":null,"email":"cal.naughton.jr@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:36:42Z","updated_at":"2016-11-02T19:36:42Z"},{"id":5361496072,"display_name":"Jean
+        Girard","first_name":null,"last_name":null,"email":"jean.girard@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:37:48Z","updated_at":"2016-11-02T19:37:48Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:22 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=1&page_size=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - c0f4f6b8-6cb7-4c01-b2eb-5a5f74a6bc11
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"2250e620faa2def3ddd225e130d7ca22"'
+      x-runtime:
+      - '0.022001'
+      date:
+      - Wed, 02 Nov 2016 20:59:22 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"page_count":2,"page_size":2,"total_count":3,"workers":[{"id":2913066854,"display_name":"Ricky
+        Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"},{"id":65139642,"display_name":"Cal
+        Naughton Jr.","first_name":null,"last_name":null,"email":"cal.naughton.jr@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:36:42Z","updated_at":"2016-11-02T19:36:42Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:22 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=1&page_size=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 765ba6bc-7d93-422a-852e-0e58fafea4a7
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"c43fcbe5d972faeff3495cb8995be5df"'
+      x-runtime:
+      - '0.023831'
+      date:
+      - Wed, 02 Nov 2016 20:59:22 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"page_count":1,"page_size":50,"total_count":3,"workers":[{"id":2913066854,"display_name":"Ricky
+        Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"},{"id":65139642,"display_name":"Cal
+        Naughton Jr.","first_name":null,"last_name":null,"email":"cal.naughton.jr@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:36:42Z","updated_at":"2016-11-02T19:36:42Z"},{"id":5361496072,"display_name":"Jean
+        Girard","first_name":null,"last_name":null,"email":"jean.girard@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:37:48Z","updated_at":"2016-11-02T19:37:48Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:22 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=2&page_size=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - b4c7cfad-902a-415b-a022-56df8aa3eb2c
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"f1c0a729b12b6798ae196d908a84edba"'
+      x-runtime:
+      - '0.024309'
+      date:
+      - Wed, 02 Nov 2016 20:59:23 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":2,"page_count":2,"page_size":2,"total_count":3,"workers":[{"id":5361496072,"display_name":"Jean
+        Girard","first_name":null,"last_name":null,"email":"jean.girard@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:37:48Z","updated_at":"2016-11-02T19:37:48Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:23 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=1&page_size=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 1419b298-6cda-4025-8e1d-54fcec35b2c9
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"a6234bf485222156a50a40103e868ad3"'
+      x-runtime:
+      - '0.019345'
+      date:
+      - Wed, 02 Nov 2016 20:59:23 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"page_count":3,"page_size":1,"total_count":3,"workers":[{"id":2913066854,"display_name":"Ricky
+        Bobby","first_name":"Ricky","last_name":"Bobby","email":"ricky.bobby@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:32:08Z","updated_at":"2016-11-02T19:32:08Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:23 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=2&page_size=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 48bb4369-4b9f-4ad6-9b6b-33c021768d9d
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"5cf49e06fd2e653290e541218f2cdbc9"'
+      x-runtime:
+      - '0.018627'
+      date:
+      - Wed, 02 Nov 2016 20:59:23 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":2,"page_count":3,"page_size":1,"total_count":3,"workers":[{"id":65139642,"display_name":"Cal
+        Naughton Jr.","first_name":null,"last_name":null,"email":"cal.naughton.jr@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:36:42Z","updated_at":"2016-11-02T19:36:42Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:23 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers/65139642
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - b7f9be45-d027-46bd-aa70-efe371e0c6cb
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"1b413912176f2ef9d8b03420dc6deaac"'
+      x-runtime:
+      - '0.015435'
+      date:
+      - Wed, 02 Nov 2016 20:59:24 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":65139642,"display_name":"Cal Naughton Jr.","first_name":null,"last_name":null,"email":"cal.naughton.jr@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:36:42Z","updated_at":"2016-11-02T19:36:42Z"}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:24 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers?page=3&page_size=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - 91bef74b-2d25-4a13-bbc7-f4df68dbf19b
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"ca43d0820d2ac336d71698b886bcd9b4"'
+      x-runtime:
+      - '0.018875'
+      date:
+      - Wed, 02 Nov 2016 20:59:24 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":3,"page_count":3,"page_size":1,"total_count":3,"workers":[{"id":5361496072,"display_name":"Jean
+        Girard","first_name":null,"last_name":null,"email":"jean.girard@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:37:48Z","updated_at":"2016-11-02T19:37:48Z"}]}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:24 GMT
+- request:
+    method: get
+    uri: https://api.payable.com/v1/workers/5361496072
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      status:
+      - 200 OK
+      cache-control:
+      - max-age=0, private, must-revalidate
+      vary:
+      - Accept-Encoding
+      strict-transport-security:
+      - max-age=31536000
+      x-payable-api-version:
+      - '2016-05-16'
+      x-request-id:
+      - becf7fa7-e53a-4479-89a1-045ff68a5895
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - '"5b389c0ba601a44d2b86abf1388a59a3"'
+      x-runtime:
+      - '0.018230'
+      date:
+      - Wed, 02 Nov 2016 20:59:24 GMT
+      x-powered-by:
+      - Phusion Passenger
+      server:
+      - nginx + Phusion Passenger
+      access-control-allow-credentials:
+      - 'true'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":5361496072,"display_name":"Jean Girard","first_name":null,"last_name":null,"email":"jean.girard@example.com","signed_up":false,"invite_status":"not_invited","payable":false,"created_at":"2016-11-02T19:37:48Z","updated_at":"2016-11-02T19:37:48Z"}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 20:59:24 GMT
+recorded_with: VCR 3.0.3

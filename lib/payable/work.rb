@@ -11,5 +11,7 @@ module Payable
     attribute :payment_status, Types::PaymentStatus
 
     def self.collection; 'work'; end
+
+    extend Writeable
   end
 end

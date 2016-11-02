@@ -22,8 +22,38 @@ module Payable
     @client = instance
   end
 
-  MissingRequiredSetting = Class.new(StandardError)
-  InvalidRequest         = Class.new(StandardError)
+  Error                  = Class.new(StandardError)
+  MissingRequiredSetting = Class.new(Error)
+
+  class InvalidRequest < Error
+    attr_reader :response
+
+    def initialize(response = {})
+      @response = response
+      super
+    end
+
+    def response?
+      return false if response.nil?
+      return false if response.respond_to?(:empty?) && response.empty?
+      !!response
+    end
+
+    def status
+      return nil unless response
+      response[:status]
+    end
+
+    def headers
+      return nil unless response
+      response[:headers]
+    end
+
+    def body
+      return nil unless response
+      respose[:body]
+    end
+  end
 end
 
 require 'payable/types'

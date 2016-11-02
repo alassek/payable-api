@@ -15,7 +15,7 @@ module Payable
     end
 
     def connection
-      @connection ||= Faraday.new api_url do |conn|
+      @connection ||= Faraday.new Payable.api_url do |conn|
         conn.basic_auth company_id, api_key
         conn.request :json
         conn.response :json
@@ -27,11 +27,5 @@ module Payable
     end
 
     def_delegators :connection, :get, :post
-
-    private
-
-    def api_url
-      Addressable::URI.parse Payable.config.api_url
-    end
   end
 end

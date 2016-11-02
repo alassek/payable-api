@@ -44,6 +44,7 @@ module Payable
   end
 end
 
+require 'payable/writeable'
 require 'payable/worker'
 require 'payable/work_type'
 require 'payable/work'

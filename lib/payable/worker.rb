@@ -7,5 +7,11 @@ module Payable
     attribute :signed_up, Types::Bool
     attribute :invite_status, Types::InviteStatus
     attribute :payable, Types::Bool
+
+    extend Writeable
+    def self.create(params = {})
+      raise InvalidRequest, "display_name is a required parameter" unless params[:display_name]
+      super
+    end
   end
 end

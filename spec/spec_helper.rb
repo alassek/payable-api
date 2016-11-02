@@ -100,4 +100,10 @@ VCR.configure do |c|
     record: :none,
     allow_playback_repeats: true
   }
+
+  c.before_record do |i|
+    i.request.headers.delete('Authorization')
+  end
 end
+
+Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }

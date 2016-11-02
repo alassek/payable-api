@@ -12,9 +12,12 @@ module Payable
 
       @collection   = @type.collection
       @resource_url = Payable.api_url.join(collection)
-      @page_num     = options.fetch(:page_num, 1)
-      @page_size    = options.fetch(:page_size){ Payable.config.page_size }
-      @params       = filter options, :page_num, :page_size
+      @client       = options.delete(:client){ Payable.client }
+      @page_num     = options.delete(:page_num){ 1 }
+      @page_size    = options.delete(:page_size){ Payable.config.page_size }
+      @page_size    = 50 if @page_size < 1
+      @page_size    = 250 if @page_size > 250
+      @params       = options
       @pages        = {}
     end
 
@@ -53,18 +56,14 @@ module Payable
 
     private
 
+    attr_reader :client
+
     def get(page: 1, page_size: @page_size)
-      Payable.client.get(resource_url, params.merge(page: page, page_size: page_size))
+      client.get(resource_url, params.merge(page: page, page_size: page_size))
     end
 
     def map(collection)
       Array(collection).map{ |row| type.new(row) }
-    end
-
-    def filter(hash, *exceptions)
-      hash.dup.tap do |h|
-        exceptions.each{ |key| h.delete(key) }
-      end
     end
   end
 end

@@ -10,11 +10,8 @@ module Payable
     attr_reader :company_id, :api_key
 
     def initialize(company_id: Payable.config.company_id, api_key: Payable.config.api_key)
-      @company_id = company_id
-      @api_key    = api_key
-
-      raise MissingRequiredSetting, "company_id" unless company_id
-      raise MissingRequiredSetting, "api_key" unless api_key
+      @company_id = company_id or raise MissingRequiredSetting, "company_id"
+      @api_key = api_key or raise MissingRequiredSetting, "api_key"
     end
 
     def connection
@@ -24,6 +21,7 @@ module Payable
         conn.response :json
         conn.response :logger, Payable.config.logger, bodies: true if Payable.config.logger
         conn.response :symbolize_keys
+        conn.response :raise_error
         conn.adapter Faraday.default_adapter
       end
     end

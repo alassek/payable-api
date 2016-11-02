@@ -62,7 +62,9 @@ module Payable
     end
 
     def filter(hash, *exceptions)
-      Hash[Array(hash).reject { |(key, _)| exceptions.include?(key) }]
+      hash.dup.tap do |h|
+        exceptions.each{ |key| h.delete(key) }
+      end
     end
   end
 end

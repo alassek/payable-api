@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Payable::WorkType, vcr: { cassette_name: 'work_type' } do
+RSpec.describe Payable::WorkType, vcr: { cassette_name: 'work_type', match_requests_on: [:method, :path, :query] } do
   let(:unit){ Payable::WorkType.retrieve(123) }
   let(:time){ Payable::WorkType.retrieve(234) }
   let(:money){ Payable::WorkType.retrieve(345) }

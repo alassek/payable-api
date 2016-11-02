@@ -92,9 +92,12 @@ Payable.configure do |config|
 end
 
 VCR.configure do |c|
+  # c.debug_logger = $stderr
   c.cassette_library_dir = "spec/cassettes"
   c.hook_into :faraday
-  c.default_cassette_options = { record: :none, match_requests_on: [:method, :path, :query] }
   c.configure_rspec_metadata!
-  # c.debug_logger = $stderr
+  c.default_cassette_options = {
+    record: :none,
+    allow_playback_repeats: true
+  }
 end

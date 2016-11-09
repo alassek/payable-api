@@ -5,9 +5,9 @@ module Payable
     attribute :quantity, Types::Form::Decimal
     attribute :quantity_measure, Types::QuantityMeasure
     attribute :start, Types::Form::DateTime
-    attribute :end, Types::Form::DateTime
-    attribute :note, Types::String
-    attribute :payment_id, Types::Strict::Int
+    attribute :end, Types::Form::DateTime.optional
+    attribute :notes, Types::String.optional
+    attribute :payment_id, Types::Strict::Int.optional
     attribute :payment_status, Types::PaymentStatus
 
     def self.collection; 'work'; end
